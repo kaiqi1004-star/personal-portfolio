@@ -4,31 +4,40 @@ body {
     background-color: #FFF8F0;
     color: #444444;
     margin: 30px;
-}
-
-h1 {
-    color: #D9778B;
     text-align: center;
 }
 
-h2 {
-    color: #739B75;
-}
-
-img {
+#welcomeScreen img {
     max-width: 100%;
     height: auto;
+    border-radius: 15px;
 }
 
 button {
     background-color: #D9778B;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
 }
 
 button:hover {
     background-color: #B85C72;
+}
+
+h1, h2 {
+    color: #D9778B;
+}
+
+#mainContent {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#mainContent h1 {
+    text-align: center;
 }

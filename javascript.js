@@ -1,5 +1,5 @@
 
 function showWelcome() {
-    document.getElementById("welcomeMessage").innerHTML =
-        "Welcome to my portfolio! Nice to meet you!";
+    document.getElementById("welcomeScreen").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
 }
