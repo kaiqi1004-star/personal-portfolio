@@ -41,3 +41,21 @@ h1, h2 {
 #mainContent h1 {
     text-align: center;
 }
+/* Project Cards */
+.project-card {
+    background-color: #FFFFFF;
+    border: 1px solid #F0D5DC;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.project-card h3 {
+    color: #D9778B;
+    margin-top: 0;
+}
+
+.project-card p {
+    line-height: 1.6;
+}
