@@ -20,34 +20,66 @@ welcomeButton.addEventListener("click", function () {
 });
 
 
-// =====================================
-// 2. DARK / LIGHT MODE
-// =====================================
 
-const themeToggle = document.getElementById("themeToggle");
+/* =====================================
+   2. DARK / LIGHT MODE
+===================================== */
 
 function initThemeToggle() {
 
+    const themeToggle = document.getElementById("themeToggle");
+
     if (!themeToggle) {
-        console.error("Theme toggle button not found.");
+        console.warn("Theme toggle button not found.");
         return;
     }
 
+    // Get saved theme from localStorage
+    let savedTheme = "light";
+
+    try {
+        savedTheme = localStorage.getItem("portfolioTheme") || "light";
+    } catch (error) {
+        console.warn("Unable to access localStorage:", error);
+    }
+
+    // Apply saved theme
+    function applyTheme(theme) {
+
+        const isDarkMode = theme === "dark";
+
+        document.body.classList.toggle("dark-mode", isDarkMode);
+
+        themeToggle.textContent = isDarkMode ? "☀️" : "🌙";
+
+        themeToggle.setAttribute(
+            "aria-label",
+            isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+        );
+    }
+
+    // Load saved theme when website opens
+    applyTheme(savedTheme);
+
+    // Switch theme when button is clicked
     themeToggle.addEventListener("click", function () {
 
-        const isDarkMode = document.body.classList.toggle("dark-mode");
+        const isDarkMode = document.body.classList.contains("dark-mode");
 
-        if (isDarkMode) {
-            themeToggle.textContent = "☀️";
-            themeToggle.setAttribute("aria-label", "Switch to light mode");
-        } else {
-            themeToggle.textContent = "🌙";
-            themeToggle.setAttribute("aria-label", "Switch to dark mode");
+        const newTheme = isDarkMode ? "light" : "dark";
+
+        applyTheme(newTheme);
+
+        // Save user's theme preference
+        try {
+            localStorage.setItem("portfolioTheme", newTheme);
+        } catch (error) {
+            console.warn("Unable to save theme preference:", error);
         }
 
     });
 
 }
 
-// Initialize theme toggle
 initThemeToggle();
+
