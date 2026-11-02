@@ -717,6 +717,7 @@ body.dark-mode .tech-tags span {
 }
 
 
+
 /* =====================================
    16. TABLET AND MOBILE RESPONSIVENESS
 ===================================== */
@@ -741,10 +742,8 @@ body.dark-mode .tech-tags span {
         gap: 15px;
         padding: 15px 0;
     }
+
     .nav-links.active {
-    display: flex;
-}
-    .nav-links.open {
         display: flex;
     }
 
@@ -786,6 +785,14 @@ body.dark-mode .tech-tags span {
     }
 }
 
+.nav-links a.active {
+    color: var(--primary-pink);
+    font-weight: bold;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
 
 @media (max-width: 480px) {
 
@@ -856,4 +863,29 @@ body.dark-mode .tech-tags span {
         transform: none;
     }
 
+}
+
+
+/* =====================================
+   18. SCROLL REVEAL ANIMATION
+===================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
