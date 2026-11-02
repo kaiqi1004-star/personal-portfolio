@@ -83,3 +83,63 @@ function initThemeToggle() {
 
 initThemeToggle();
 
+
+/* =====================================
+   3. MOBILE NAVIGATION
+===================================== */
+
+function initMobileNavigation() {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    // Check whether required elements exist
+    if (!menuToggle || !navLinks) {
+        console.warn("Mobile navigation elements not found.");
+        return;
+    }
+
+    // Open or close mobile menu
+    menuToggle.addEventListener("click", function () {
+
+        const isOpen = navLinks.classList.toggle("active");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+
+    });
+
+    // Close menu after clicking a navigation link
+    navLinks.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+            menuToggle.textContent = "☰";
+
+        });
+
+    });
+
+    // Close menu when pressing Escape
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+            menuToggle.textContent = "☰";
+
+        }
+
+    });
+
+}
+
+initMobileNavigation();
