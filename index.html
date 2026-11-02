@@ -1,120 +1,471 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Lai Kai Qi (104696)</title>
-    <meta name="description" content="Personal Introduction!">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Personal portfolio of Lai Kai Qi, a Computer Science student at UNIMAS.">
+
+    <meta name="author" content="Lai Kai Qi">
+
+    <title>Lai Kai Qi | Personal Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Skip Link for Accessibility -->
+    <a href="#home" class="skip-link">Skip to main content</a>
+
     <!-- Welcome Screen -->
-    <div id="welcomeScreen">
-        <img src="cat.webp" width="800" height="600" alt="Cute cat">
-        <br>
-        <button onclick="showWelcome()">Click Me!</button>
+    <section id="welcomeScreen" class="welcome-screen">
+
+        <div class="welcome-container">
+
+            <img
+                src="cat.webp"
+                alt="A cute cat welcoming visitors to my portfolio"
+                class="welcome-cat"
+            >
+
+            <h1>Welcome to My Little Corner!</h1>
+
+            <p>A little creativity, a little curiosity, and a lot to learn.</p>
+
+            <button id="welcomeButton" class="primary-button">
+                Enter My Portfolio ♡
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Main Portfolio Content -->
+    <div id="mainContent" hidden>
+
+        <!-- Navigation Bar -->
+        <header class="site-header">
+
+            <nav class="navbar" aria-label="Main navigation">
+
+                <a href="#home" class="logo">Kai Qi<span>.</span></a>
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navLinks"
+                >
+                    ☰
+                </button>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <button
+                    id="themeToggle"
+                    class="theme-toggle"
+                    aria-label="Switch to dark theme"
+                >
+                    🌙
+                </button>
+
+            </nav>
+
+        </header>
+
+
+        <!-- Scroll Progress Indicator -->
+        <div class="scroll-progress" id="scrollProgress"></div>
+
+
+        <main>
+
+            <!-- Home Section -->
+            <section id="home" class="hero section-container">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">HELLO, NICE TO MEET YOU!</p>
+
+                    <h1>
+                        I'm <span class="highlight">Lai Kai Qi</span>
+                    </h1>
+
+                    <h2>
+                        I'm a <span id="typingText">Computer Science Student</span>
+                    </h2>
+
+                    <p class="hero-description">
+                        I am a Year 3 Computer Science student specialising
+                        in Multimedia Computing at Universiti Malaysia
+                        Sarawak (UNIMAS). I enjoy exploring technology,
+                        multimedia and web development while continuously
+                        improving my skills.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="primary-button">
+                            Explore My Projects
+                        </a>
+
+                        <a href="#contact" class="secondary-button">
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-decoration">
+                    <img
+                        src="cat.webp"
+                        alt="Cute cat representing my personal style"
+                        class="hero-cat"
+                    >
+                </div>
+
+            </section>
+
+
+            <!-- About Me Section -->
+            <section id="about" class="about-section section-container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">GET TO KNOW ME</p>
+                    <h2>About Me <span>🌷</span></h2>
+                    <p>A little introduction about who I am.</p>
+                </div>
+
+                <div class="about-content">
+
+                    <div class="about-text">
+
+                        <h3>Hi, I'm Kai Qi!</h3>
+
+                        <p>
+                            I am currently pursuing a Bachelor of Computer
+                            Science (Multimedia Computing) with Honours at
+                            Universiti Malaysia Sarawak (UNIMAS).
+                        </p>
+
+                        <p>
+                            Throughout my studies, I have gained experience
+                            in programming, database management, web
+                            development and multimedia-related projects.
+                            I enjoy learning new technologies and turning
+                            ideas into practical projects.
+                        </p>
+
+                        <p>
+                            My current interests include full-stack
+                            development, artificial intelligence and
+                            creative digital experiences.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-details">
+
+                        <div class="detail-card">
+                            <h3>🎓 Education</h3>
+                            <p>Universiti Malaysia Sarawak (UNIMAS)</p>
+                            <p>Bachelor of Computer Science</p>
+                            <p>Multimedia Computing with Honours</p>
+                        </div>
+
+                        <div class="detail-card">
+                            <h3>💻 Technical Interests</h3>
+                            <p>Web Development</p>
+                            <p>Programming</p>
+                            <p>Artificial Intelligence</p>
+                            <p>Multimedia Computing</p>
+                        </div>
+
+                        <div class="detail-card">
+                            <h3>🌱 Hobbies</h3>
+                            <p>Listening to music</p>
+                            <p>Watching movies</p>
+                            <p>Hiking</p>
+                            <p>Exploring new skills</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects-section section-container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">WHAT I'VE WORKED ON</p>
+                    <h2>My Projects <span>💻</span></h2>
+                    <p>
+                        A collection of academic and creative projects
+                        from my learning journey.
+                    </p>
+                </div>
+
+
+                <!-- Project Search -->
+                <div class="project-controls">
+
+                    <label for="projectSearch" class="visually-hidden">
+                        Search projects
+                    </label>
+
+                    <input
+                        type="search"
+                        id="projectSearch"
+                        placeholder="Search projects..."
+                    >
+
+                    <div class="filter-buttons" aria-label="Filter projects">
+
+                        <button class="filter-btn active" data-filter="all">
+                            All
+                        </button>
+
+                        <button class="filter-btn" data-filter="game">
+                            Games
+                        </button>
+
+                        <button class="filter-btn" data-filter="web">
+                            Web Development
+                        </button>
+
+                        <button class="filter-btn" data-filter="application">
+                            Applications
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-grid" id="projectGrid">
+
+                    <!-- Project 1 -->
+                    <article class="project-card"
+                        data-category="game"
+                        data-search="snake game c++ opengl arcade">
+
+                        <div class="project-number">PROJECT 01</div>
+
+                        <h3>🐍 Snake Game</h3>
+
+                        <p class="project-type">2D Arcade Game</p>
+
+                        <p>
+                            A classic Snake Game developed using C++.
+                            Players control a snake, collect food and
+                            avoid collisions while trying to achieve
+                            a higher score.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>C++</span>
+                            <span>OpenGL</span>
+                            <span>FreeGLUT</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 2 -->
+                    <article class="project-card"
+                        data-category="web"
+                        data-search="shaa sarawak heritage auction php mysql">
+
+                        <div class="project-number">PROJECT 02</div>
+
+                        <h3>🏛️ Sarawak Heritage Online Auction</h3>
+
+                        <p class="project-type">Web Application</p>
+
+                        <p>
+                            A web-based auction project focused on
+                            showcasing and trading Sarawak heritage
+                            products through an online platform.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>XAMPP</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 3 -->
+                    <article class="project-card"
+                        data-category="game"
+                        data-search="tamu tycoon game design simulation">
+
+                        <div class="project-number">PROJECT 03</div>
+
+                        <h3>🍜 Tamu Tycoon</h3>
+
+                        <p class="project-type">Game Design</p>
+
+                        <p>
+                            A game concept inspired by local markets,
+                            focusing on stall management, business
+                            decisions and simulation gameplay.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>Game Design</span>
+                            <span>Simulation</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 4 -->
+                    <article class="project-card"
+                        data-category="application"
+                        data-search="healthwise java swing health application">
+
+                        <div class="project-number">PROJECT 04</div>
+
+                        <h3>❤️ HealthWise</h3>
+
+                        <p class="project-type">Java Desktop Application</p>
+
+                        <p>
+                            A Java Swing group project related to
+                            SDG 3: Good Health and Well-being, involving
+                            a graphical user interface and score tracking.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>Java</span>
+                            <span>Swing</span>
+                            <span>OOP</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 5 -->
+                    <article class="project-card"
+                        data-category="application"
+                        data-search="campus360 appsheet campus assistance application">
+
+                        <div class="project-number">PROJECT 05</div>
+
+                        <h3>🎓 Campus360</h3>
+
+                        <p class="project-type">Campus Support Application</p>
+
+                        <p>
+                            A university-focused application concept
+                            designed around campus assistance,
+                            community interaction and student well-being.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>AppSheet</span>
+                            <span>Google Sheets</span>
+                            <span>UI Design</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <p id="noProjects" class="no-projects" hidden>
+                    No matching projects found. Try another search!
+                </p>
+
+            </section>
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section section-container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">LET'S CONNECT</p>
+                    <h2>Contact Me <span>💌</span></h2>
+                    <p>
+                        Feel free to reach out for opportunities,
+                        collaboration or just a friendly conversation.
+                    </p>
+                </div>
+
+                <div class="contact-card">
+
+                    <h3>Get in Touch!</h3>
+
+                    <p>
+                        I would love to connect and learn from new
+                        experiences.
+                    </p>
+
+                    <a
+                        href="mailto:kaiq"1004@gmail.com
+                        class="primary-button"
+                    >
+                        Send Me an Email
+                    </a>
+
+                    <div class="social-links">
+
+                        <a
+                            href="https://github.com/kaiqi1004-star"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="site-footer">
+
+            <p>Made with ♡ by Lai Kai Qi</p>
+
+            <p>&copy; 2026 Lai Kai Qi. All rights reserved.</p>
+
+        </footer>
+
+
+        <!-- Back to Top Button -->
+        <button
+            id="backToTop"
+            class="back-to-top"
+            aria-label="Back to top"
+        >
+            ↑
+        </button>
+
     </div>
 
-    <!-- Main Portfolio: Hidden at first -->
-    <div id="mainContent" style="display: none;">
 
-        <h1>Welcome to My Portfolio!</h1>
-        <h2>Nice to meet you.</h2>
+    <script src="javascript.js" defer></script>
 
-        <table border="1">
-            <tr>
-                <th><a href="#about">🌼 About Me 🌼</a></th>
-                <th><a href="#hobbies">🪴 Hobbies 🪴</a></th>
-				<th><a href="#projects">💻 My Projects 💻</a></th>
-
-            </tr>
-        </table>
-
-        <section>
-            <hr>
-            <h2 id="about">🌼 About Me 🌼</h2>
-            <h3>Hi, I'm Kai Qi!</h3>
-
-            <p>
-                My name is Lai Kai Qi. I am a Year 3, Semester 1
-                student studying Multimedia Computing at Universiti
-                Malaysia Sarawak (UNIMAS). I am interested in
-                technology, multimedia and web development.
-                During my studies, I have learned different
-                programming languages and technologies.
-                I enjoy learning new things and improving my skills.
-            </p>
-
-            <hr>
-            <h2 id="hobbies">🪴 My Hobbies 🪴</h2>
-
-            <p>
-                In my free time, I enjoy listening to music,
-                watching movies and hiking. I also like exploring
-                new things and learning new skills.
-            </p>
-
-            <ul>
-                <li>🎵 Listening to music</li>
-                <li>🎞️ Watching movies</li>
-                <li>😸 Watching cute cat videos</li>
-                <li>🏕️ Hiking</li>
-                <li>🌟 Learning new skills</li>
-            </ul>
-
-			        <hr>
-
-        <h2 id="projects">💻 My Projects 💻</h2>
-        <p>
-            Here are some projects I have worked on during my studies.
-            Each project has helped me learn new skills and explore
-            different areas of technology.
-        </p>
-
-        <div class="project-card">
-            <h3>📱 Snake Game (mini game)</h3>
-            <p>
-                <strong>Project Type:</strong> 2D Arcade Game
-            </p>
-            <p>
-                This project involves developing a classic Snake Game
-            using C++. Players control the snake, collect food,
-            and try to achieve a higher score while avoiding
-            collisions.
-            </p>
-            <p><strong>Technologies:</strong> C++, OpenGL, FreeGLUT</p>
-        </div>
-
-        <div class="project-card">
-            <h3>🏛️ Sarawak Heritage Online Auction (SHAA)</h3>
-            <p>
-                <strong>Project Type:</strong> Web Application
-            </p>
-            <p>
-                This project focuses on developing an online auction
-                website related to Sarawak heritage.
-            </p>
-            <p><strong>Technologies:</strong> PHP, MySQL, XAMPP</p>
-        </div>
-
-        <div class="project-card">
-            <h3>🍜 Tamu Tycoon</h3>
-            <p>
-                <strong>Project Type:</strong> Game Design
-            </p>
-            <p>
-                This game concept focuses on managing a market stall,
-                making business decisions and learning basic financial
-                management through gameplay.
-            </p>
-            <p><strong>Focus:</strong> Game Design, Simulation</p>
-        </div>
-
-        </section>
-
-    </div>
-
-    <script src="javascript.js"></script>
 </body>
 </html>
