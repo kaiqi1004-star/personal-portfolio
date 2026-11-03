@@ -497,7 +497,30 @@ img {
     transform: translateY(-7px);
     box-shadow: 0 12px 25px rgba(100, 60, 60, 0.12);
 }
+.project-card .project-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+/* Project Cover Images */
 
+.project-image {
+    width: calc(100% + 56px);
+    margin: -28px -28px 20px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 18px 18px 0 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
 .project-number {
     color: var(--primary-green);
     font-size: 0.8rem;
@@ -543,7 +566,9 @@ img {
     color: var(--muted-text);
     padding: 30px;
 }
-
+.project-detail-button {
+    margin-top: 20px;
+}
 
 /* =====================================
    11. CONTACT SECTION
@@ -859,6 +884,10 @@ body.dark-mode .tech-tags span {
         right: 15px;
         bottom: 15px;
     }
+    .project-image {
+    width: calc(100% + 44px);
+    margin: -22px -22px 20px;
+}
 }
 
 
@@ -905,5 +934,169 @@ body.dark-mode .tech-tags span {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+}
+/* =====================================
+   PROJECT DETAIL PAGE
+===================================== */
+
+.detail-navbar {
+    max-width: 1100px;
+    min-height: 75px;
+    margin: auto;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back-link {
+    color: var(--dark-green);
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.detail-logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.detail-logo span {
+    color: var(--dark-green);
+}
+
+.project-detail {
+    max-width: 1000px;
+    margin: auto;
+    padding: 70px 30px;
+}
+
+.detail-hero {
+    text-align: center;
+}
+
+.detail-label {
+    color: var(--dark-green);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+
+.detail-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--dark-green);
+    margin: 12px 0;
+}
+
+.detail-subtitle {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.detail-intro {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    color: var(--muted-text);
+}
+
+.detail-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.detail-cover {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 65px;
+}
+
+.detail-cover img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.detail-content {
+    display: grid;
+    gap: 30px;
+}
+
+.detail-section {
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 20px;
+    padding: 28px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.detail-number {
+    color: var(--dark-green);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.detail-section h2 {
+    color: var(--dark-green);
+    margin-bottom: 12px;
+}
+
+.detail-section p,
+.detail-section li {
+    color: var(--muted-text);
+}
+
+.detail-section ul {
+    padding-left: 20px;
+}
+
+.detail-section li {
+    margin-bottom: 8px;
+}
+
+.detail-footer {
+    text-align: center;
+    margin-top: 45px;
+}
+
+body.dark-mode .detail-section {
+    background-color: var(--white);
+}
+
+body.dark-mode .detail-section h2 {
+    color: #D5EBAF;
+}
+
+@media (max-width: 600px) {
+    .detail-navbar {
+        padding: 12px 18px;
+    }
+
+    .project-detail {
+        padding: 45px 18px;
+    }
+
+    .detail-section {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 22px;
+    }
+
+    .detail-buttons {
+        flex-direction: column;
+    }
+
+    .detail-buttons a {
+        width: 100%;
     }
 }

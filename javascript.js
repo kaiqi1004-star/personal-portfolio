@@ -1,4 +1,5 @@
 
+
 // =====================================
 // 1. WELCOME SCREEN
 // =====================================
@@ -7,17 +8,54 @@ const welcomeButton = document.getElementById("welcomeButton");
 const welcomeScreen = document.getElementById("welcomeScreen");
 const mainContent = document.getElementById("mainContent");
 
-welcomeButton.addEventListener("click", function () {
+function enterPortfolio(scrollToProjects = false) {
 
+    // Hide welcome screen
     welcomeScreen.style.display = "none";
+
+    // Show main portfolio content
     mainContent.hidden = false;
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    // Scroll to the requested section
+    if (scrollToProjects) {
 
+        requestAnimationFrame(function () {
+
+            const projectsSection = document.getElementById("projects");
+
+            if (projectsSection) {
+                projectsSection.scrollIntoView({
+                    behavior: "instant",
+                    block: "start"
+                });
+            }
+
+        });
+
+    } else {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+
+// Normal entrance button
+welcomeButton.addEventListener("click", function () {
+    enterPortfolio(false);
 });
+
+
+// Automatically skip welcome screen when returning from a project page
+if (window.location.hash === "#projects") {
+
+    enterPortfolio(true);
+
+}
 
 
 
