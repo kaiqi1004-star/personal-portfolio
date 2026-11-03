@@ -44,6 +44,16 @@ function enterPortfolio(scrollToProjects = false) {
     }
 }
 
+
+
+
+// Automatically skip welcome screen when returning from a project page
+if (window.location.hash === "#projects") {
+
+    enterPortfolio(true);
+
+}
+
 // Normal entrance button
 if (welcomeButton) {
 
@@ -54,9 +64,16 @@ if (welcomeButton) {
 }
 
 // Automatically skip welcome screen when returning from a project page
+// Automatically skip welcome screen when returning from a project page
 if (window.location.hash === "#projects") {
 
-    enterPortfolio(true);
+    const savedPosition = sessionStorage.getItem("projectsScrollPosition");
+
+    if (savedPosition !== null) {
+        enterPortfolio(false, true);
+    } else {
+        enterPortfolio(true);
+    }
 
 }
  /* =====================================
@@ -562,3 +579,5 @@ function initContactForm() {
 
 // Initialize contact form
 initContactForm();
+
+

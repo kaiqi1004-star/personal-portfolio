@@ -46,7 +46,7 @@
 
 
     <!-- Main Portfolio Content -->
-   <main id="mainContent">
+   <main id="mainContent" hidden>
 
         <!-- Navigation Bar -->
         <header class="site-header">
@@ -140,73 +140,172 @@
 
 
             <!-- About Me Section -->
-            <section id="about" class="about-section section-container">
+            
+<section id="about" class="about-section">
+    <div class="about-container">
 
-                <div class="section-heading">
-                    <p class="eyebrow">GET TO KNOW ME</p>
-                    <h2>About Me <span>🌷</span></h2>
-                    <p>A little introduction about who I am.</p>
+        <!-- Section Heading -->
+        <div class="about-heading">
+            <span class="about-label">GET TO KNOW ME</span>
+            <h2>About Me</h2>
+            <p>A little introduction about who I am and what I enjoy building.</p>
+        </div>
+
+        <!-- Introduction -->
+        <div class="about-intro">
+            <div class="about-intro-text">
+                <span class="about-label">HELLO, I'M KAI QI</span>
+
+                <h3>
+                    Computer Science Student
+                    <span>& Aspiring Developer</span>
+                </h3>
+
+                <p>
+                    I am a Year 3 Bachelor of Computer Science
+                    (Multimedia Computing) student at Universiti
+                    Malaysia Sarawak (UNIMAS).
+
+                    I am interested in web development,
+                    artificial intelligence and multimedia
+                    technologies. I enjoy exploring new
+                    technologies and developing digital
+                    solutions that provide meaningful user
+                    experiences.
+                </p>
+            </div>
+
+            <div class="about-intro-tag">
+                <span>Currently exploring</span>
+                <strong>Web Development & AI</strong>
+            </div>
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="about-block">
+            <div class="about-block-heading">
+                <span class="about-label">01 / QUICK FACTS</span>
+                <h3>A Snapshot of Me</h3>
+            </div>
+
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <h4>🪄Curious Learner</h4>
+                    <p>Always exploring new technologies.</p>
                 </div>
 
-                <div class="about-content">
-
-                    <div class="about-text">
-
-                        <h3>Hi, I'm Kai Qi!</h3>
-
-                        <p>
-                            I am currently pursuing a Bachelor of Computer
-                            Science (Multimedia Computing) with Honours at
-                            Universiti Malaysia Sarawak (UNIMAS).
-                        </p>
-
-                        <p>
-                            Throughout my studies, I have gained experience
-                            in programming, database management, web
-                            development and multimedia-related projects.
-                            I enjoy learning new technologies and turning
-                            ideas into practical projects.
-                        </p>
-
-                        <p>
-                            My current interests include full-stack
-                            development, artificial intelligence and
-                            creative digital experiences.
-                        </p>
-
-                    </div>
-
-
-                    <div class="about-details">
-
-                        <div class="detail-card">
-                            <h3>🎓 Education</h3>
-                            <p>Universiti Malaysia Sarawak (UNIMAS)</p>
-                            <p>Bachelor of Computer Science</p>
-                            <p>Multimedia Computing with Honours</p>
-                        </div>
-
-                        <div class="detail-card">
-                            <h3>💻 Technical Interests</h3>
-                            <p>Web Development</p>
-                            <p>Programming</p>
-                            <p>Artificial Intelligence</p>
-                            <p>Multimedia Computing</p>
-                        </div>
-
-                        <div class="detail-card">
-                            <h3>🌱 Hobbies</h3>
-                            <p>Listening to music</p>
-                            <p>Watching movies</p>
-                            <p>Hiking</p>
-                            <p>Exploring new skills</p>
-                        </div>
-
-                    </div>
-
+                <div class="fact-card">
+                    <h4>✍️Problem Solver</h4>
+                    <p>Enjoy finding solutions to challenges.</p>
                 </div>
 
-            </section>
+                <div class="fact-card">
+                    <h4>✨Creative Thinker</h4>
+                    <p>Combining creativity with technology.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>🙆‍♀️Team Collaborator</h4>
+                    <p>Learning and building together.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Journey -->
+        <div class="about-block">
+            <div class="about-block-heading">
+                <span class="about-label">02 / LEARNING JOURNEY</span>
+                <h3>🌟My Learning Journey🌟</h3>
+                <p>Exploring different areas of technology
+                   through coursework and projects.</p>
+            </div>
+
+            <div class="journey-list">
+
+                <div class="journey-item">
+                    <span class="journey-number">01</span>
+                    <div>
+                        <h4>Programming Fundamentals</h4>
+                        <p>Learning programming, Java,
+                           object-oriented programming and
+                           database concepts.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <span class="journey-number">02</span>
+                    <div>
+                        <h4>Application Development</h4>
+                        <p>Building desktop applications and
+                           database-driven web systems.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <span class="journey-number">03</span>
+                    <div>
+                        <h4>Multimedia & UI/UX</h4>
+                        <p>Exploring mobile application
+                           prototypes, interface design and
+                           usability evaluation.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <span class="journey-number">04</span>
+                    <div>
+                        <h4>Exploring AI & Full-Stack Development</h4>
+                        <p>Expanding my knowledge of modern
+                           web technologies and AI-powered
+                           applications.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Technical Interests -->
+        <div class="about-block">
+            <div class="about-block-heading">
+                <span class="about-label">03 / TECHNICAL INTERESTS</span>
+                <h3>What I'm Interested In</h3>
+            </div>
+
+            <div class="interests-grid">
+
+                <div class="interest-card">
+                    <span class="interest-icon">01</span>
+                    <h4>🌐Web Development</h4>
+                    <p>Building responsive websites and
+                       interactive web applications.</p>
+                </div>
+
+                <div class="interest-card">
+                    <span class="interest-icon">02</span>
+                    <h4>💡Artificial Intelligence</h4>
+                    <p>Exploring AI technologies and
+                       intelligent digital solutions.</p>
+                </div>
+
+                <div class="interest-card">
+                    <span class="interest-icon">03</span>
+                    <h4>🌟UI/UX Design</h4>
+                    <p>Creating intuitive interfaces and
+                       user-friendly experiences.</p>
+                </div>
+
+                <div class="interest-card">
+                    <span class="interest-icon">04</span>
+                    <h4>⚙️Software & Database</h4>
+                    <p>Developing applications and
+                       understanding data management.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
 
 
             <!-- Projects Section -->

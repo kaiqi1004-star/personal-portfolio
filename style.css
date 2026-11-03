@@ -1170,3 +1170,304 @@ body.dark-mode .detail-section h2 {
     outline-offset: 3px;
     border-color: #668C3D;
 }
+
+/* =========================================
+   MODERN ABOUT ME SECTION
+========================================= */
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.about-label {
+    display: inline-block;
+    color: var(--dark-green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.about-heading h2 {
+    font-size: 2.3rem;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.about-heading p {
+    color: var(--muted-text);
+}
+
+/* Introduction */
+
+.about-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 55px;
+    box-shadow: var(--shadow);
+}
+
+.about-intro-text {
+    flex: 1;
+}
+
+.about-intro-text h3 {
+    font-size: 2rem;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 18px;
+}
+
+.about-intro-text h3 span {
+    color: var(--dark-green);
+}
+
+.about-intro-text p {
+    color: var(--muted-text);
+    line-height: 1.9;
+    max-width: 650px;
+}
+
+.about-intro-tag {
+    min-width: 210px;
+    padding: 25px;
+    background: var(--light-green);
+    border-radius: 15px;
+}
+
+.about-intro-tag span {
+    display: block;
+    color: var(--muted-text);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.about-intro-tag strong {
+    color: var(--dark-green);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Common Blocks */
+
+.about-block {
+    margin-bottom: 55px;
+}
+
+.about-block-heading {
+    margin-bottom: 25px;
+}
+
+.about-block-heading h3 {
+    font-size: 1.65rem;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.about-block-heading p {
+    color: var(--muted-text);
+    line-height: 1.7;
+}
+
+/* Quick Facts */
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.fact-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 25px 20px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.fact-card h4 {
+    color: var(--dark-green);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.fact-card p {
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Learning Journey */
+
+.journey-list {
+    border-left: 2px solid var(--border);
+    margin-left: 15px;
+    padding-left: 30px;
+}
+
+.journey-item {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.journey-item:last-child {
+    margin-bottom: 0;
+}
+
+.journey-number {
+    position: absolute;
+    left: -42px;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-green);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.journey-item h4 {
+    color: var(--text);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.journey-item p {
+    color: var(--muted-text);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Technical Interests */
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.interest-card {
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--dark-green);
+    box-shadow: var(--shadow);
+}
+
+.interest-icon {
+    display: inline-block;
+    color: var(--dark-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.interest-card h4 {
+    color: var(--text);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.interest-card p {
+    color: var(--muted-text);
+    line-height: 1.7;
+    font-size: 0.92rem;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .about-intro {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 28px;
+    }
+
+    .about-intro-text h3 {
+        font-size: 1.65rem;
+    }
+
+    .about-intro-tag {
+        min-width: 0;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .about-container {
+        padding: 30px 16px;
+    }
+
+    .about-heading h2 {
+        font-size: 1.9rem;
+    }
+
+    .about-intro {
+        padding: 22px;
+    }
+
+    .fact-card {
+        padding: 20px 15px;
+    }
+
+    .fact-card h4 {
+        font-size: 1.25rem;
+    }
+
+    .journey-list {
+        padding-left: 25px;
+    }
+
+    .journey-number {
+        left: -37px;
+    }
+
+    .interest-card {
+        padding: 23px;
+    }
+
+}
