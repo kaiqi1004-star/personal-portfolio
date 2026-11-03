@@ -1,14 +1,16 @@
 
-
-// =====================================
 // 1. WELCOME SCREEN
-// =====================================
 
 const welcomeButton = document.getElementById("welcomeButton");
 const welcomeScreen = document.getElementById("welcomeScreen");
 const mainContent = document.getElementById("mainContent");
 
 function enterPortfolio(scrollToProjects = false) {
+
+    // Check whether welcome screen elements exist
+    if (!welcomeScreen || !mainContent) {
+        return;
+    }
 
     // Hide welcome screen
     welcomeScreen.style.display = "none";
@@ -40,15 +42,16 @@ function enterPortfolio(scrollToProjects = false) {
         });
 
     }
-
 }
 
-
 // Normal entrance button
-welcomeButton.addEventListener("click", function () {
-    enterPortfolio(false);
-});
+if (welcomeButton) {
 
+    welcomeButton.addEventListener("click", function () {
+        enterPortfolio(false);
+    });
+
+}
 
 // Automatically skip welcome screen when returning from a project page
 if (window.location.hash === "#projects") {
@@ -56,75 +59,55 @@ if (window.location.hash === "#projects") {
     enterPortfolio(true);
 
 }
-
-
-
-/* =====================================
-   2. DARK / LIGHT MODE
+ /* =====================================
+   DARK MODE
 ===================================== */
 
-function initThemeToggle() {
-
+function initDarkMode() {
     const themeToggle = document.getElementById("themeToggle");
 
-    if (!themeToggle) {
-        console.warn("Theme toggle button not found.");
-        return;
-    }
-
     // Get saved theme from localStorage
-    let savedTheme = "light";
-
-    try {
-        savedTheme = localStorage.getItem("portfolioTheme") || "light";
-    } catch (error) {
-        console.warn("Unable to access localStorage:", error);
-    }
+    const savedTheme = localStorage.getItem("theme");
 
     // Apply saved theme
-    function applyTheme(theme) {
-
-        const isDarkMode = theme === "dark";
-
-        document.body.classList.toggle("dark-mode", isDarkMode);
-
-        themeToggle.textContent = isDarkMode ? "☀️" : "🌙";
-
-        themeToggle.setAttribute(
-            "aria-label",
-            isDarkMode ? "Switch to light mode" : "Switch to dark mode"
-        );
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    } else {
+        document.body.classList.remove("dark-mode");
     }
 
-    // Load saved theme when website opens
-    applyTheme(savedTheme);
-
-    // Switch theme when button is clicked
-    themeToggle.addEventListener("click", function () {
-
-        const isDarkMode = document.body.classList.contains("dark-mode");
-
-        const newTheme = isDarkMode ? "light" : "dark";
-
-        applyTheme(newTheme);
-
-        // Save user's theme preference
-        try {
-            localStorage.setItem("portfolioTheme", newTheme);
-        } catch (error) {
-            console.warn("Unable to save theme preference:", error);
+    // Update theme button
+    function updateThemeButton() {
+        if (themeToggle) {
+            themeToggle.textContent =
+                document.body.classList.contains("dark-mode")
+                    ? "☀️"
+                    : "🌙";
         }
+    }
 
-    });
+    updateThemeButton();
 
+    // Toggle theme when button is clicked
+    if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+
+            const currentTheme =
+                document.body.classList.contains("dark-mode")
+                    ? "dark"
+                    : "light";
+
+            localStorage.setItem("theme", currentTheme);
+
+            updateThemeButton();
+        });
+    }
 }
 
-initThemeToggle();
+initDarkMode();
 
-
-/* =====================================
-   3. MOBILE NAVIGATION
-===================================== */
+  // 3. MOBILE NAVIGATION
 
 function initMobileNavigation() {
 
@@ -183,9 +166,7 @@ function initMobileNavigation() {
 initMobileNavigation();
 
 
-/* =====================================
-   4. TYPING ANIMATION
-===================================== */
+   //4. TYPING ANIMATION
 
 function initTypingAnimation() {
 
@@ -244,62 +225,8 @@ function initTypingAnimation() {
 initTypingAnimation();
 
 
-/* =====================================
-   5. PROJECT FILTER
-===================================== */
 
-function initProjectFilter() {
-
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectCards = document.querySelectorAll(".project-card");
-
-    if (filterButtons.length === 0 || projectCards.length === 0) {
-        console.warn("Project filter elements not found.");
-        return;
-    }
-
-    filterButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const selectedCategory = button.dataset.filter;
-
-            // Update active button
-            filterButtons.forEach(function (btn) {
-                btn.classList.remove("active");
-            });
-
-            button.classList.add("active");
-
-            // Show or hide project cards
-            projectCards.forEach(function (card) {
-
-                const projectCategory = card.dataset.category;
-
-                if (
-                    selectedCategory === "all" ||
-                    selectedCategory === projectCategory
-                ) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-
-            });
-
-        });
-
-    });
-
-}
-
-// Initialize project filter
-initProjectFilter();
-
-
-/* =====================================
-   5. PROJECT FILTER AND SEARCH
-===================================== */
+   //5. PROJECT FILTER AND SEARCH
 
 function initProjectFilter() {
 
@@ -388,7 +315,7 @@ function initProjectFilter() {
 initProjectFilter();
 
 
-// Feature 8: Scroll Progress Bar
+// Feature 6: Scroll Progress Bar
 function initScrollProgress() {
     const scrollProgress = document.getElementById("scrollProgress");
 
@@ -421,7 +348,7 @@ function initScrollProgress() {
 
 initScrollProgress();
 
-// Feature 9: Back to Top Button
+// Feature 7: Back to Top Button
 function initBackToTop() {
     const backToTop = document.getElementById("backToTop");
 
@@ -455,7 +382,7 @@ function initBackToTop() {
 initBackToTop();
 
 
- // Feature 10: Active Navigation
+ // Feature 8: Active Navigation
 function initActiveNavigation() {
     const sections = document.querySelectorAll("main section[id]");
     const navLinks = document.querySelectorAll(".nav-links a");
@@ -495,7 +422,7 @@ function initActiveNavigation() {
 initActiveNavigation();
 
 
-// Feature 11: Scroll Reveal Animation
+// Feature 9: Scroll Reveal Animation
 function initScrollReveal() {
     const revealElements = document.querySelectorAll(
         ".about-content, .project-card, .contact-card"
@@ -532,3 +459,106 @@ function initScrollReveal() {
 }
 
 initScrollReveal();
+
+/* =====================================
+   10. CONTACT FORM VALIDATION
+===================================== */
+
+function initContactForm() {
+
+    const contactForm = document.getElementById("contactForm");
+
+    if (!contactForm) {
+        return;
+    }
+
+    const nameInput = document.getElementById("contactName");
+    const emailInput = document.getElementById("contactEmail");
+    const subjectInput = document.getElementById("contactSubject");
+    const messageInput = document.getElementById("contactMessage");
+    const formStatus = document.getElementById("formStatus");
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        // Clear previous error messages
+        document.querySelectorAll(".error-message").forEach(function (error) {
+            error.textContent = "";
+        });
+
+        formStatus.textContent = "";
+        formStatus.className = "form-status";
+
+        let isValid = true;
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const message = messageInput.value.trim();
+
+        // Validate Name
+        if (name === "") {
+            document.getElementById("nameError").textContent =
+                "Please enter your name.";
+            isValid = false;
+        }
+
+        // Validate Email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email === "") {
+            document.getElementById("emailError").textContent =
+                "Please enter your email address.";
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent =
+                "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        // Validate Subject
+        if (subject === "") {
+            document.getElementById("subjectError").textContent =
+                "Please enter a subject.";
+            isValid = false;
+        }
+
+        // Validate Message
+        if (message === "") {
+            document.getElementById("messageError").textContent =
+                "Please enter your message.";
+            isValid = false;
+        }
+
+        // Stop if validation fails
+        if (!isValid) {
+            formStatus.textContent =
+                "Please correct the errors above.";
+            formStatus.classList.add("error");
+            return;
+        }
+
+        // Prepare Gmail message
+        const gmailURL =
+            "https://mail.google.com/mail/?view=cm&fs=1" +
+            "&to=kaiqi1004@gmail.com" +
+            "&su=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(
+                "Name: " + name +
+                "\nEmail: " + email +
+                "\n\nMessage:\n" + message
+            );
+
+        formStatus.textContent =
+            "Your information is ready. Opening Gmail...";
+        formStatus.classList.add("success");
+
+        window.open(gmailURL, "_blank", "noopener,noreferrer");
+
+    });
+
+}
+
+// Initialize contact form
+initContactForm();

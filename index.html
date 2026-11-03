@@ -17,7 +17,9 @@
 <body>
 
     <!-- Skip Link for Accessibility -->
-    <a href="#home" class="skip-link">Skip to main content</a>
+    <a href="#mainContent" class="skip-link">
+    Skip to main content
+</a>
 
     <!-- Welcome Screen -->
     <section id="welcomeScreen" class="welcome-screen">
@@ -44,7 +46,7 @@
 
 
     <!-- Main Portfolio Content -->
-    <div id="mainContent" hidden>
+   <main id="mainContent">
 
         <!-- Navigation Bar -->
         <header class="site-header">
@@ -232,9 +234,7 @@
                         id="projectSearch"
                         placeholder="Search projects..."
                     >
-                    <p id="noProjects" style="display: none;">
-                    No projects found.
-                    </p>
+                  
 
                     <div class="filter-buttons" aria-label="Filter projects">
 
@@ -307,7 +307,7 @@
 
                         <div class="project-image">
                         <img src="images/shaa.png"
-                        alt="Snake Game Screenshot">
+                        alt="shaa Screenshot">
                         </div>
 
                         <div class="project-number">PROJECT 02</div>
@@ -342,7 +342,7 @@
  
                         <div class="project-image">
                         <img src="images/healthwise.png"
-                        alt="Snake Game Screenshot">
+                        alt="HealthWise Screenshot">
                         </div>
 
                         <div class="project-number">PROJECT 03</div>
@@ -376,7 +376,7 @@
 
                         <div class="project-image">
                         <img src="images/campus360.png"
-                        alt="Snake Game Screenshot">
+                        alt="Campus360 Screenshot">
                          </div>
 
                         <div class="project-number">PROJECT 04</div>
@@ -416,7 +416,7 @@
 
                         <div class="project-image">
                         <img src="images/futurenow.png"
-                        alt="Snake Game Screenshot">
+                        alt="FutureNow Screenshot">
                         </div>
 
                         <div class="project-number">PROJECT 05</div>
@@ -456,7 +456,7 @@
 
                         <div class="project-image">
                         <img src="images/art-mobile-app.png"
-                        alt="Snake Game Screenshot">
+                        alt="art-mobile-app Screenshot">
                         </div>
                         <div class="project-number">PROJECT 06</div>
 
@@ -493,7 +493,7 @@
 
                         <div class="project-image">
                         <img src="images/art-usability.png"
-                            alt="Snake Game Screenshot">
+                            alt="art-usability Screenshot">
                     </div>
 
                         <div class="project-number">PROJECT 07</div>
@@ -546,37 +546,93 @@
                     </p>
                 </div>
 
-                <div class="contact-card">
+                
+<div class="contact-card">
 
-                    <h3>Get in Touch!</h3>
+    <h3>Get in Touch!</h3>
 
-                    <p>
-                        I would love to connect and learn from new
-                        experiences.
-                    </p>
+    <p>
+        I would love to connect and learn from new
+        experiences. Feel free to send me a message!
+    </p>
 
-                   <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=kaiqi1004@gmail.com"
-                        class="primary-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >
-                        Send Me an Email ↗
-                    </a>
+    <form id="contactForm" novalidate>
 
-                    <div class="social-links">
+        <div class="form-group">
+            <label for="contactName">Name</label>
+            <input
+                type="text"
+                id="contactName"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+            <small class="error-message" id="nameError"></small>
+        </div>
 
-                        <a
-                            href="https://github.com/kaiqi1004-star"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub
-                        </a>
+        <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                placeholder="Enter your email address"
+                required
+            >
+            <small class="error-message" id="emailError"></small>
+        </div>
 
-                    </div>
+        <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <input
+                type="text"
+                id="contactSubject"
+                name="subject"
+                placeholder="What would you like to discuss?"
+                required
+            >
+            <small class="error-message" id="subjectError"></small>
+        </div>
 
-                </div>
+        <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea
+                id="contactMessage"
+                name="message"
+                rows="5"
+                placeholder="Write your message here..."
+                required
+            ></textarea>
+            <small class="error-message" id="messageError"></small>
+        </div>
+
+        <p
+            id="formStatus"
+            class="form-status"
+            role="status"
+            aria-live="polite"
+        ></p>
+
+        <button type="submit" class="primary-button">
+            Send Message
+        </button>
+
+    </form>
+
+    <div class="social-links">
+
+        <a
+            href="https://github.com/kaiqi1004-star"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            GitHub ↗
+        </a>
+
+    </div>
+
+</div>
+
 
             </section>
 

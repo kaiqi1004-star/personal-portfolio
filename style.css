@@ -241,8 +241,9 @@ img {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--primary-green);
+.nav-links a:hover,
+.nav-links a.active {
+    color: #668C3D;
 }
 
 .menu-toggle {
@@ -294,7 +295,7 @@ img {
 }
 
 .eyebrow {
-    color: var(--primary-green);
+    color: #668C3D;
     font-size: 0.85rem;
     font-weight: bold;
     letter-spacing: 2px;
@@ -335,7 +336,7 @@ img {
 }
 
 .highlight {
-    color: var(--primary-green);
+    color: #668C3D;
 }
 
 .hero-content h2 {
@@ -474,8 +475,8 @@ img {
 .filter-btn:hover,
 .filter-btn.active {
     background-color: var(--primary-green);
-    color: white;
-    border-color: var(--primary-green);
+    color: #35472B;
+    border-color: var(--dark-green);
 }
 
 .project-grid {
@@ -522,7 +523,7 @@ img {
     transform: scale(1.05);
 }
 .project-number {
-    color: var(--primary-green);
+    color: #668C3D;
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -688,7 +689,6 @@ img {
 }
 
 
-
 /* =====================================
    15. DARK MODE
 ===================================== */
@@ -709,15 +709,23 @@ body.dark-mode {
     background-color: var(--background);
 }
 
+/* Header and Footer */
 body.dark-mode .site-header,
 body.dark-mode .site-footer {
     background-color: #2B3A25;
 }
 
+/* Navigation */
 body.dark-mode .nav-links a {
     color: var(--text);
 }
 
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active {
+    color: #D5EBAF;
+}
+
+/* Cards */
 body.dark-mode .project-card,
 body.dark-mode .detail-card,
 body.dark-mode .contact-card,
@@ -725,6 +733,7 @@ body.dark-mode .welcome-container {
     background-color: var(--white);
 }
 
+/* Welcome Screen */
 body.dark-mode .welcome-screen {
     background: linear-gradient(135deg, #202D1B, #405B32);
 }
@@ -736,11 +745,13 @@ body.dark-mode .project-card h3 {
     color: #D5EBAF;
 }
 
+/* Section Backgrounds */
 body.dark-mode .about-section,
 body.dark-mode .contact-section {
     background-color: #2B3A25;
 }
 
+/* Project Filters and Search */
 body.dark-mode .filter-btn,
 body.dark-mode #projectSearch {
     background-color: var(--white);
@@ -754,9 +765,19 @@ body.dark-mode .filter-btn.active {
     border-color: var(--primary-green);
 }
 
+/* Technology Tags */
 body.dark-mode .tech-tags span {
     background-color: #405B32;
     color: #EAF4D9;
+}
+
+/* Input Focus */
+body.dark-mode #projectSearch:focus-visible,
+body.dark-mode .form-group input:focus-visible,
+body.dark-mode .form-group textarea:focus-visible {
+    outline: 3px solid #A8CF7D;
+    outline-offset: 3px;
+    border-color: #A8CF7D;
 }
 
 
@@ -826,11 +847,6 @@ body.dark-mode .tech-tags span {
     .scroll-progress {
         top: 75px;
     }
-}
-
-.nav-links a.active {
-    color: var(--primary-green);
-    font-weight: bold;
 }
 
 .nav-links a.active::after {
@@ -912,30 +928,6 @@ body.dark-mode .tech-tags span {
 
 }
 
-
-/* =====================================
-   18. SCROLL REVEAL ANIMATION
-===================================== */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-    .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
 /* =====================================
    PROJECT DETAIL PAGE
 ===================================== */
@@ -1099,4 +1091,82 @@ body.dark-mode .detail-section h2 {
     .detail-buttons a {
         width: 100%;
     }
+}
+
+
+/* =====================================
+   CONTACT FORM
+===================================== */
+
+#contactForm {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: var(--background);
+    color: var(--text);
+    font: inherit;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--dark-green);
+}
+
+.error-message {
+    display: block;
+    min-height: 20px;
+    margin-top: 5px;
+    color: #D64545;
+    font-size: 0.85rem;
+}
+
+.form-status {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.form-status.success {
+    color: #4F8735;
+}
+
+.form-status.error {
+    color: #D64545;
+}
+
+#contactForm button {
+    width: 100%;
+}
+/* Improved Keyboard Focus States */
+
+#projectSearch:focus-visible,
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+    outline: 3px solid #668C3D;
+    outline-offset: 3px;
+    border-color: #668C3D;
 }
